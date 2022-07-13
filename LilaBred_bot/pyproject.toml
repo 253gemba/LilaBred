@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "lilabred_bot"
+version = "0.1.0"
+description = ""
+authors = ["Ver-ar <94222049+Ver-ar@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiogram = "^2.21"
+black = "^22.6.0"
+asyncio = "^3.4.3"
+autoflake = "^1.4"
+pylint = "^2.14.4"
+isort = "^5.10.1"
+
+[tool.poetry.dev-dependencies]
+pyproject-autoflake = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

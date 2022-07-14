@@ -1,18 +1,6 @@
-import asyncio
-
-import aiogram.utils.markdown as fmt
-from aiogram import Dispatcher, types
+from aiogram import types
 from aiogram.dispatcher import FSMContext
-from aiogram.dispatcher.filters import Command, Text
-from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.types import (
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    KeyboardButton,
-    ReplyKeyboardMarkup,
-    ReplyKeyboardRemove,
-)
-from aiogram.types.message import ContentType
+from aiogram.dispatcher.filters import Text
 
 import handlers.keyboard as kb
 from create_bot import dp, lilabred_bot

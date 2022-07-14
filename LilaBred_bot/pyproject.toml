@@ -35,11 +35,14 @@ multi_line_output = 3
 skip = [".venv",".gitattributes", ".gitignore", "__pycache__"]
 line_length = 120
 
-[tool.pautoflake]
+[tool.autoflake]
 in-place = true
 recursive = true
 exclude = ".venv,.gitattributes,.gitignore,__pycache__"
-remove-all-unused-imports = true
+#remove-all-unused-imports = true
+imports = "aiogram"
 ignore-init-module-imports = true
 remove-unused-variables = true
 verbose = 1
+check = false
+expand-star-imports = false

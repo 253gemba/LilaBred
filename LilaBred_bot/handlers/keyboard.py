@@ -1,7 +1,4 @@
-from aiogram.types import (
-    KeyboardButton,
-    ReplyKeyboardMarkup,
-)
+from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
 # Опции
 

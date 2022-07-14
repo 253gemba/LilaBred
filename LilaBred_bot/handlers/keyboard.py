@@ -111,7 +111,6 @@ tail_length_button = (
 )
 
 
-
 # Брейды зона
 
 breds_head_material = KeyboardButton("Вся голова")
@@ -126,7 +125,6 @@ breds_zone_choice_button = (
     .insert(breds_undercut_material)
     .insert(back_type_choice)
 )
-
 
 
 # Брейды > зона: вся голова > толщина

@@ -1,4 +1,4 @@
-contacts = '''
+contacts = """
 📞 Звони: +7 929 507-02-05
 
 ⌨️ Пиши мне в Telegram: @lilabredlife
@@ -8,4 +8,4 @@ contacts = '''
 🔹 VKontakte: https://m.vk.com/lilabred
 
 🌐 Сайт: 
-'''
+"""

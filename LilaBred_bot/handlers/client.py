@@ -5,9 +5,13 @@ from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Command, Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
-from aiogram.types import (InlineKeyboardButton, InlineKeyboardMarkup,
-                           KeyboardButton, ReplyKeyboardMarkup,
-                           ReplyKeyboardRemove)
+from aiogram.types import (
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    KeyboardButton,
+    ReplyKeyboardMarkup,
+    ReplyKeyboardRemove,
+)
 from aiogram.types.message import ContentType
 
 import handlers.keyboard as kb
@@ -58,9 +62,7 @@ async def price_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "назад к выбору опций" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору опций" in message.text.lower())
 # Курсы/Контакты/Прайс < Возвращаемся к выбору между курсы/контакты/прайс
 async def options_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -73,9 +75,7 @@ async def options_choice(message: types.Message):
 # ____________________________________________Выбран прайс___________________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "афрокосички точечно" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "афрокосички точечно" in message.text.lower())
 # Опции > Прайс > Выбираем афрокосички - предоставлен выбор зоны
 async def afro_zone_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -95,9 +95,7 @@ async def breds_zone_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "афрохвост" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "афрохвост" in message.text.lower())
 # Опции > Прайс > Выбираем афрохвост
 async def tail_length_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -107,9 +105,7 @@ async def tail_length_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "назад к выбору прически" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору прически" in message.text.lower())
 # Опции > Прайс < Возвращаемся в Прайс (выбор между афрокосички/брейды/афрохвост)
 async def price_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -122,9 +118,7 @@ async def price_choice(message: types.Message):
 # ___________________________________________Выбраны афрокосички > выбор зоны______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "на всю голову" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "на всю голову" in message.text.lower())
 # Опции > Прайс > Афрокосички точечно > Выбор зоны - Выбираем афрокосички на всю голову - предоставлен выбор толщины
 async def afro_head_value_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -134,9 +128,7 @@ async def afro_head_value_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "на андеркат(макушка)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "на андеркат(макушка)" in message.text.lower())
 # Опции > Прайс > Афрокосички точечно > Выбор зоны - Выбираем афрокосички на макушку - предоставлен выбор толщины
 async def afro_undercut_value_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -146,10 +138,7 @@ async def afro_undercut_value_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text
-    and "назад к выбору зоны для афрокосичек" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору зоны для афрокосичек" in message.text.lower())
 # Опции > Прайс > Афрокосички точечно > Выбор зоны < Возвращаемся к выбору зоны для афрокосичек
 async def afro_zone_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -162,9 +151,7 @@ async def afro_zone_choice(message: types.Message):
 # ___________________________________________Выбраны афрокосички > зона: на всю голову______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "крупные(20-40 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "крупные(20-40 шт.)" in message.text.lower())
 async def afro_head_big(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -173,9 +160,7 @@ async def afro_head_big(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "толстые(40-60 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "толстые(40-60 шт.)" in message.text.lower())
 async def afro_head_thick(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -184,9 +169,7 @@ async def afro_head_thick(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "средние(60-80 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "средние(60-80 шт.)" in message.text.lower())
 async def afro_head_middle(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -195,9 +178,7 @@ async def afro_head_middle(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "мелкие(80-100 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "мелкие(80-100 шт.)" in message.text.lower())
 async def afro_head_small(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -209,9 +190,7 @@ async def afro_head_small(message: types.Message):
 # ___________________________________________Выбраны афрокосички > зона: на макушку______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "крупные(10-20 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "крупные(10-20 шт.)" in message.text.lower())
 async def afro_undercut_big(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -220,9 +199,7 @@ async def afro_undercut_big(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "толстые(30-40 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "толстые(30-40 шт.)" in message.text.lower())
 async def afro_undercut_thick(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -231,9 +208,7 @@ async def afro_undercut_thick(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "средние(40-60 шт.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "средние(40-60 шт.)" in message.text.lower())
 async def afro_undercut_small(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -242,15 +217,6 @@ async def afro_undercut_small(message: types.Message):
     )
 
 
-"""
-@dp.message_handler(lambda message: message.text and 'назад к выбору количества косичек' in message.text.lower())
-async def afro_head_value_choice(message: types.Message):
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        "Выбери толщину/количество косичек:",
-        reply_markup=kb.afro_head_thickness_button,
-    )
-"""
 # ___________________________________________Выбраны брейды > выбор зоны______________________________________________________
 
 
@@ -263,9 +229,7 @@ async def breds_zone_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "вся голова" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "вся голова" in message.text.lower())
 async def breds_head_choice(message: types.Message):
     await lilabred_bot.send_message(
         message.from_user.id,
@@ -274,9 +238,7 @@ async def breds_head_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "андеркат(макушка)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "андеркат(макушка)" in message.text.lower())
 async def breds_undercut_choice(message: types.Message):
     await lilabred_bot.send_message(
         message.from_user.id,
@@ -285,9 +247,7 @@ async def breds_undercut_choice(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "назад к выбору прически" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору прически" in message.text.lower())
 # Опции > Прайс < Возвращаемся в Прайс (выбор между афрокосички/брейды/афрохвост)
 async def price_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -300,9 +260,7 @@ async def price_choice(message: types.Message):
 # ___________________________________________Выбраны зоны брейдов: вся голова > выбор количества косичек______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "с материалом: 2-4 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с материалом: 2-4 шт." in message.text.lower())
 async def breds_head_material_1(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -311,9 +269,7 @@ async def breds_head_material_1(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "с материалом: 5-7 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с материалом: 5-7 шт." in message.text.lower())
 async def breds_head_material_2(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -322,9 +278,7 @@ async def breds_head_material_2(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "с материалом: 8-10 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с материалом: 8-10 шт." in message.text.lower())
 async def breds_head_material_3(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -333,9 +287,7 @@ async def breds_head_material_3(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "без материала: 5-7 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без материала: 5-7 шт." in message.text.lower())
 async def breds_head_2(message: types.Message):
     await lilabred_bot.send_photo(
         chat_id=message.from_user.id,
@@ -344,16 +296,12 @@ async def breds_head_2(message: types.Message):
     )
 
 
-@dp.message_handler(
-    lambda message: message.text and "без материала: 8-10 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без материала: 8-10 шт." in message.text.lower())
 async def breds_head_3(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "6 000 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "без материала: 2-4 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без материала: 2-4 шт." in message.text.lower())
 async def breds_head_1(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "2 000 руб.")
 
@@ -374,44 +322,32 @@ async def afro_zone_head_choice(message: types.Message):
 # ___________________________________________Выбраны зоны брейдов: андеркат(макушка) > выбор количества косичек______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "с матeриалом: 2-4 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с матeриалом: 2-4 шт." in message.text.lower())
 async def breds_undercut_material_1(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "3 500 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "с матeриалом: 5-7 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с матeриалом: 5-7 шт." in message.text.lower())
 async def breds_undercut_material_2(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "4 500 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "с матeриалом: 8-10 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "с матeриалом: 8-10 шт." in message.text.lower())
 async def breds_undercut_material_3(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "5 500 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "без матeриала: 2-4 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без матeриала: 2-4 шт." in message.text.lower())
 async def breds_undercut_1(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "3 500 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "без матeриала: 5-7 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без матeриала: 5-7 шт." in message.text.lower())
 async def breds_undercut_2(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "4 500 руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "без матeриала: 8-10 шт." in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "без матeриала: 8-10 шт." in message.text.lower())
 async def breds_undercut_3(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "4 500 руб.")
 
@@ -447,10 +383,7 @@ async def breds_undercut_3(message: types.Message):
 """
 
 
-@dp.message_handler(
-    lambda message: message.text
-    and "назад к выбору зоны для брейдов" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору зоны для брейдов" in message.text.lower())
 # Опции > Прайс > Афрокосички точечно > Выбор зоны < Возвращаемся к выбору зоны для афрокосичек
 async def breds_zone_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -463,33 +396,25 @@ async def breds_zone_choice(message: types.Message):
 # ___________________________________________Выбран афрохвост > выбор длины______________________________________________________
 
 
-@dp.message_handler(
-    lambda message: message.text and "длинный хвост(75-80 см.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "длинный хвост(75-80 см.)" in message.text.lower())
 # Опции > Прайс > Афрохвост > Выбор длины - длинный хвост
 async def tail_lenght_long(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "5 000руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "средний хвост(55-60 см.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "средний хвост(55-60 см.)" in message.text.lower())
 # Опции > Прайс > Афрохвост > Выбор длины - средний хвост
 async def tail_lenght_middle(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "4 000руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "короткий хвост(40-45 см.)" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "короткий хвост(40-45 см.)" in message.text.lower())
 # Опции > Прайс > Афрохвост > Выбор длины - короткий хвост
 async def tail_lenght_short(message: types.Message):
     await lilabred_bot.send_message(message.from_user.id, "3 000руб.")
 
 
-@dp.message_handler(
-    lambda message: message.text and "назад к выбору прически" in message.text.lower()
-)
+@dp.message_handler(lambda message: message.text and "назад к выбору прически" in message.text.lower())
 # Опции > Прайс < Возвращаемся в Прайс (выбор между афрокосички/брейды/афрохвост)
 async def price_choice(message: types.Message):
     await lilabred_bot.send_message(
@@ -541,130 +466,3 @@ async def cancel_handler(message: types.Message, state: FSMContext):
     current_state = await state.get_state()
     if current_state is None:
         return
-
-
-"""
-@dp.message_handler(lambda message: message.text and 'прайс' in message.text.lower())
-async def cmd_cancel(message: types.Message, state: FSMContext):
-    await state.finish()
-    await message.answer("Выполнение команды прервано")
-
-
-def register_handlers_client(dp: Dispatcher):
-    dp.register_message_handler(send_welcome, commands=["start"])
-
-    dp.register_message_handler(price_choice, commands=["Прайс"], commands_prefix='!/')
-
-    # dp.register_message_handler(start_game, commands=["startgame"])
-
-    # dp.register_message_handler(search_step_1, commands=["search"])
-
-    dp.register_message_handler(cmd_cancel, commands=["cancel"], state="*")
-
-    # dp.register_message_handler(Ellis_step_1, commands=["Опросить_администратора"])
-
-    # dp.register_message_handler(Robert_kill, commands=["Убийца-Роберт."])
-
-    #dp.register_message_handler(unknown_message, content_types=ContentType.ANY)
-"""
-
-"""
-
-async def first_choise(message: types.Message):
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        "Привет! Выбери нужную опцию:",
-        reply_markup=kb.first_choise_button,
-    )
-"""
-'''
-async def start_game(message: types.Message):
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        fmt.text(
-            fmt.text(
-                "Холодный осенний вечер. Почти полночь. Вы только что пришли домой с работы, присели в кресло, открыли бутылку виски, включили телевизор, и, предвкушая спокойный вечер, закуриваете сигарету."
-            ),
-            fmt.text("Вдруг телефон зазвонил. Звонок от вашего начальника."),
-            fmt.hitalic("...Черт, ну что там опять???"),
-            sep="\n",
-        ),
-        parse_mode="HTML",
-    )
-    await asyncio.sleep(5)
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        fmt.text(
-            fmt.hbold("Начальник:"),
-            fmt.text(
-                "-Добрый вечер, детектив... Извини за поздний звонок, но нужно подъехать на пристань. У нас новое дело, и оно не терпит отлагательств."
-            ),
-            sep="\n",
-        ),
-        parse_mode="HTML",
-    )
-    await asyncio.sleep(3)
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        """Вы с нехотой собираетесь, что ж, долг зовет, нельзя отказываться, тем более, что раз уж позвонили Вам...
-    Такси быстро примчало Вас к пристани, поднявшись на борт, Вы оцениваете обстановку. 
-    Ваши коллеги докладывают Вам, что сегодня, ровно в три часа ночи, на лайнере «Олимпик», во время вечеринки, был убит мужчина.""",
-    )
-    await asyncio.sleep(5)
-
-    async def send_photo():
-        chat_id = message.from_user.id
-        await lilabred_bot.send_photo(chat_id=message.from_user.id, photo=open("photos/Mark.jpg", "rb"))
-
-    await send_photo()
-    await asyncio.sleep(10)
-
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        """
-    Мужчину нашли в каюте администратора палубы, с травмой головы.
-    Ваш коллега, который будет расследовать с Вами дело, выяснил, что тело Марка обнаружила администратор палубы, но он еще не успел ее опросить. Разгадайте загадку и найдите убийцу. Раскрыть дело нужно максимально тихо, дабы не тревожить покой остальных гостей лайнера.""",
-    )
-    await asyncio.sleep(5)
-    await lilabred_bot.send_message(
-        message.from_user.id, "Начнем раскрывать убийство? Введи команду /search"
-    )
-
-
-async def search_step_1(message: types.Message):
-    await lilabred_bot.send_message(
-        message.from_user.id,
-        "Так как о теле в полицию сообщила администратор - Вы решили начать опрос с нее, как с главного свидетеля этого убийства.",
-        reply_markup=kb_M.kb_client_Ellis_1,
-    )
-
-async def you_win(chat_id):
-    async def send_photo_done(chat_id):
-        await bot_game.send_photo(chat_id=chat_id, photo=open("photos/Close.jpg", "rb"))
-        await asyncio.sleep(10)
-
-    async def send_confession(chat_id):
-        await bot_game.send_photo(
-            chat_id=chat_id, photo=open("photos/Confession.jpg", "rb")
-        )
-        await asyncio.sleep(10)
-
-    async def send_win(chat_id):
-        await bot_game.send_photo(chat_id=chat_id, photo=open("photos/Win.jpg", "rb"))
-        await asyncio.sleep(10)
-
-    await send_photo_done(chat_id)
-    await send_win(chat_id)
-    await send_confession(chat_id)
-
-
-async def Robert_kill(message: types.Message):
-    chat_id = message.from_user.id
-    await you_win(chat_id)
-
-    await bot_game.send_message(
-        message.from_user.id,
-        "Поздравляю, детектив, Вы блестяще раскрыли дело! Шикарная работа, снимаю перед Вами шляпу! До новых встреч)",
-        reply_markup=types.ReplyKeyboardRemove(),
-    )
-'''

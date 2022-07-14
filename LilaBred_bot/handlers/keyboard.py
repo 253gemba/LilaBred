@@ -9,10 +9,7 @@ courses = KeyboardButton("Курсы")
 contacts = KeyboardButton("Контакты")
 
 first_choice_button = (
-    ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    .add(price)
-    .insert(courses)
-    .insert(contacts)
+    ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True).add(price).insert(courses).insert(contacts)
 )
 
 # Прайс

@@ -7,5 +7,5 @@ contacts = """
 
 🔹 VKontakte: https://m.vk.com/lilabred
 
-🌐 Сайт: 
+🌐 Сайт: lilabred.ru
 """

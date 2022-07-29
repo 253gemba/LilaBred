@@ -1,9 +1,7 @@
 .vscode/
 env/
-.venv/
 __pycache__/
 *.pyc
 *.log
 *.pem
 settings.py
-data.pickle
